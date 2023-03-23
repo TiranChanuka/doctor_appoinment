@@ -47,7 +47,7 @@ class WelcomeScreen extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            SizedBox(height: 60,),
+            SizedBox(height: 160,),
             Material(
               color: wColor,
               borderRadius: BorderRadius.circular(10),
