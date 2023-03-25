@@ -61,14 +61,79 @@ class HomeScreen extends StatelessWidget {
                               radius: 30,
                               backgroundImage: AssetImage("images/user1.png"),
                             ),
+                            Icon(
+                              Icons.notifications_outlined,
+                              color: wColor,
+                              size: 30,
+                            ),
                           ],
                         ),
+                        SizedBox(height: 15,),
+                        Text(
+                          "Hi, User",
+                          style: TextStyle(
+                            color: wColor,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        SizedBox(height: 10,),
+                        Text(
+                          "Your Health in Our\nFirst Priority",
+                          style: TextStyle(
+                            color: wColor,
+                            fontSize: 22,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 15,bottom: 20),
+                          width: MediaQuery.of(context).size.width,
+                          height: 55,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: wColor,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                color: sColor,
+                                blurRadius: 6,
+                                spreadRadius: 3,
+                              ),
+                            ],
+                          ),
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: "Search Here",
+                              hintStyle: TextStyle(
+                                color: bColor.withOpacity(0.5),
+                              ),
+                              prefixIcon: Icon(
+                                Icons.search,
+                                size: 25,
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 15),
+                    child: Text(
+                      "Catagory",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20,
+                        color: bColor.withOpacity(0.7),
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
+
           ],
         ),
       ),
