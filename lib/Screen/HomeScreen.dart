@@ -1,6 +1,7 @@
 import 'package:doctor_appoinment/Colors.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import '../Widgets/doctors_section.dart';
 
 class HomeScreen extends StatelessWidget {
 
@@ -130,6 +131,61 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+                  SizedBox(height: 15,),
+                  Container(
+                    height: 100,
+                    child: ListView.builder(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: catName.length,
+                        itemBuilder: (context,index){
+                          return Column(
+                            children: [
+                              Container(
+                                margin: EdgeInsets.symmetric(vertical: 5,horizontal: 15),
+                                height: 60,
+                                width: 60,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFF2F8FF),
+                                  shape: BoxShape.circle,
+                                  boxShadow: [BoxShadow(
+                                    color:sColor,
+                                    blurRadius: 4,
+                                    spreadRadius: 2,
+                                  ),
+                                  ],
+                                ),
+                                child: Center(
+                                  child: catIcon[index],
+                                ),
+                              ),
+                              SizedBox(height: 10,),
+                              Text(
+                                catName[index],
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                  color: bColor.withOpacity(0.7)
+                                ),
+                              ),
+                            ],
+                          );
+                        },
+                    ),
+                  ),
+                  SizedBox(height: 30,),
+                  Padding(
+                    padding: EdgeInsets.only(left: 15),
+                    child: Text(
+                      "Recommended Doctors",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20,
+                        color: bColor.withOpacity(0.7),
+                      ),
+                    ),
+                  ),
+                  DoctorsSection(),
                 ],
               ),
             ),
