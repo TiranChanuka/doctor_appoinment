@@ -43,8 +43,33 @@ class DoctorsSection extends StatelessWidget {
                               topLeft: Radius.circular(15),
                               topRight: Radius.circular(15),
                             ),
+                            child: Image.asset(
+                              "Images/d${index+1}.jpg",
+                              height: 200,
+                              width: 200,
+                              fit: BoxFit.cover,
+                            ),
                           ),
-                        )
+                        ),
+                        Align(
+                          alignment: Alignment.topRight,
+                          child: Container(
+                            margin: EdgeInsets.all(8),
+                            height: 45,
+                            width: 45,
+                            decoration: BoxDecoration(
+                              color: Color(0xFFF2F8FF),
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: sColor,
+                                  blurRadius: 4,
+                                  spreadRadius: 2,
+                                ),
+                              ]
+                            ),
+                          ),
+                        ),
                       ],
                     )
                   ],
