@@ -44,7 +44,7 @@ class DoctorsSection extends StatelessWidget {
                               topRight: Radius.circular(15),
                             ),
                             child: Image.asset(
-                              "Images/d${index+1}.jpg",
+                              "images/doctor${index+1}.jpg",
                               height: 200,
                               width: 200,
                               fit: BoxFit.cover,
@@ -66,7 +66,14 @@ class DoctorsSection extends StatelessWidget {
                                   blurRadius: 4,
                                   spreadRadius: 2,
                                 ),
-                              ]
+                              ],
+                            ),
+                            child: Center(
+                              child: Icon(
+                                Icons.favorite_outline,
+                                color: pColor,
+                                size: 28,
+                              ),
                             ),
                           ),
                         ),
