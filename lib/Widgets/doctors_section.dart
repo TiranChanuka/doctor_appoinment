@@ -1,5 +1,7 @@
 import 'package:doctor_appoinment/Colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_native/flutter_rating_native.dart';
+import '../Screen/AppointScreen.dart';
 
 class DoctorsSection extends StatelessWidget {
   const DoctorsSection({Key? key}) : super(key: key);
@@ -37,7 +39,11 @@ class DoctorsSection extends StatelessWidget {
                     Stack(
                       children: [
                         InkWell(
-                          onTap: (){},
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(
+                                builder: (context)=>AppointScreen(),
+                            ));
+                          },
                           child: ClipRRect(
                             borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(15),
@@ -78,7 +84,50 @@ class DoctorsSection extends StatelessWidget {
                           ),
                         ),
                       ],
-                    )
+                    ),
+                    SizedBox(height: 8,),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal:5),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Dr Looney",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                              color: pColor,
+                            ),
+                          ),
+                          Text(
+                            "Surgeon",
+                            style: TextStyle(
+                              fontSize: 16,
+                            ),
+                          ),
+                          SizedBox(height: 8,),
+                          Row(
+                            children: [
+                              FlutterRating(
+                                rating: 4.5,
+                                size: 22,
+                                color: Colors.amber,
+                              ),
+                              // Icon(
+                              //   Icons.star,
+                              //   color: Colors.amber,
+                              // ),
+                              SizedBox(width: 5,),
+                              Text("4.5",style: TextStyle(
+                                fontSize: 14,
+                                color: bColor.withOpacity(0.6),
+                              ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
